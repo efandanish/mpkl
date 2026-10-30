@@ -1,0 +1,9 @@
+#!/bin/sh
+# CLI launcher; does not change PATH, .php-version, Homebrew, or XAMPP.
+set -eu
+PHP825_PROJECT_ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+if [ -z "${PHP825_SOURCE_ROOT:-}" ]; then
+    PHP825_SOURCE_ROOT=$("$PHP825_PROJECT_ROOT/scripts/php825-stage")
+    export PHP825_SOURCE_ROOT
+fi
+exec docker compose -f "$PHP825_PROJECT_ROOT/docker/php825/compose.yaml" run --rm -T --no-deps php php "$@"

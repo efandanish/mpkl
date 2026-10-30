@@ -1,0 +1,9 @@
+#!/bin/sh
+# Export only reviewed indexed blobs; never copy ignored host data or Git history.
+# Stage reviewed source changes before refreshing this runtime snapshot.
+set -eu
+PHP825_PROJECT_ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+umask 077
+PHP825_STAGED_SOURCE=$(mktemp -d /private/tmp/cajpemajuan-php825-source.XXXXXX)
+git -C "$PHP825_PROJECT_ROOT" checkout-index --all --prefix="$PHP825_STAGED_SOURCE/"
+printf '%s\n' "$PHP825_STAGED_SOURCE"

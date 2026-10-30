@@ -1,0 +1,5 @@
+local.php
+.env
+.env.*
+compose.override.*
+docker-compose.override.*

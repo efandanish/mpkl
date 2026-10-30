@@ -1,0 +1,61 @@
+.DS_Store
+
+# Logs
+app/logs/*
+!app/logs/.gitkeep
+
+# Uploaded receipts
+public/uploads/receipts/*
+!public/uploads/receipts/.gitkeep
+
+# Local/private config
+.env
+
+# IDE files
+.vscode/
+.idea/
+
+# Backups
+*.bak
+*.backup
+*.old
+app/config/local.php
+
+# Private configuration, exports and runtime data
+.env.*
+!.env.example
+app/config/config.php
+app/config/local.*.php
+!app/config/local.example.php
+*.sql
+!database/schema.sql
+!database/caj_pemajuan.sanitized.sql
+!database/migrations/*.sql
+*.sql.gz
+*.sql.zip
+*.dump
+*.sqlite*
+*.log
+app/backups/*
+!app/backups/.gitignore
+app/uploads/*
+!app/uploads/.gitignore
+public/uploads/receipts/*
+!public/uploads/receipts/.gitkeep
+app/cache/
+node_modules/
+dist/
+build/
+coverage/
+docker/**/local.php
+docker/**/compose.override.*
+docker/**/docker-compose.override.*
+
+# Generated dependencies, source-control internals and local tooling state
+/vendor/
+/_installation/
+/.aws/
+/.codex/
+/.agents/
+__pycache__/
+*.pyc

@@ -1,0 +1,255 @@
+/* =========================================================
+   FINANCIAL KPI CARDS
+   ========================================================= */
+
+.finance-kpi {
+    height: 100%;
+
+    padding: 18px 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+
+    box-shadow:
+        0 1px 2px rgba(24, 36, 51, 0.03);
+}
+
+
+.finance-kpi-label {
+    margin-bottom: 7px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    color: #667382;
+}
+
+
+.finance-kpi-value {
+    font-size: 20px;
+    font-weight: 700;
+
+    color: #182433;
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.finance-section {
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+
+    box-shadow:
+        0 1px 2px rgba(24, 36, 51, 0.025);
+}
+
+
+.finance-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+
+    border-bottom: 1px solid #edf0f3;
+}
+
+
+.finance-section-header h6 {
+    color: #182433;
+}
+
+
+/* =========================================================
+   SCHEDULE
+   ========================================================= */
+
+.schedule-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+.schedule-item {
+    padding: 15px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+}
+
+
+.schedule-item-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   EXPENSES
+   ========================================================= */
+
+.expense-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+.expense-record {
+    position: relative;
+
+    padding: 16px 46px 16px 16px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce4ea;
+    border-left: 3px solid #2fb344;
+
+    border-radius: 9px;
+}
+
+
+.expense-delete-btn {
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 6px;
+
+    background: #fdecec;
+    color: #d63939;
+
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+
+.expense-delete-btn:hover {
+    background: #d63939;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   TOTAL
+   ========================================================= */
+
+.finance-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 18px;
+    padding-top: 16px;
+
+    border-top: 1px solid #e6e8ec;
+
+    color: #667382;
+
+    font-size: 13px;
+}
+
+
+.finance-total strong {
+    color: #182433;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.finance-empty-state {
+    padding: 30px 20px;
+
+    background: #fafbfd;
+
+    border: 1px dashed #ced4da;
+    border-radius: 8px;
+
+    text-align: center;
+
+    color: #667382;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   FORM CONTROLS
+   ========================================================= */
+
+.module-page .form-label {
+    margin-bottom: 6px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    color: #475569;
+}
+
+
+.module-page .form-control,
+.module-page .form-select {
+    min-height: 40px;
+
+    border-color: #d9dee5;
+
+    border-radius: 7px;
+}
+
+
+.module-page .form-control:focus,
+.module-page .form-select:focus {
+    border-color: #206bc4;
+
+    box-shadow:
+        0 0 0 3px rgba(32, 107, 196, 0.12);
+}
+
+
+
+@media (max-width: 768px) {
+ .finance-section { padding: 16px; }
+ .finance-section-header { flex-direction: column; align-items: flex-start; }
+}

@@ -1,0 +1,4 @@
+# Historical build dependencies; keep signed Release verification enabled.
+# Old snapshots have expired Valid-Until timestamps by design.
+deb [check-valid-until=no] https://snapshot.debian.org/archive/debian/20230415T000000Z bullseye main
+deb [check-valid-until=no] https://snapshot.debian.org/archive/debian-security/20230415T000000Z bullseye-security main

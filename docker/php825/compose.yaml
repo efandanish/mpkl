@@ -1,0 +1,37 @@
+name: mpkl-php825
+services:
+  db:
+    image: mariadb:10.4.27@sha256:0a9aae6f3de4ec173ea77b6df64dd2002135f06ee496eabb08a23be68fdc92e4
+    platform: linux/arm64
+    environment:
+      MYSQL_ROOT_PASSWORD: ${PHP825_DB_PASSWORD:?Set a private development password}
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_DATABASE: cajpemajuan_php825_dev_test
+    volumes:
+      - php825-db:/var/lib/mysql
+      - ${PHP825_SOURCE_ROOT:?Run scripts/php825-stage first}/database/schema.sql:/docker-entrypoint-initdb.d/001-schema.sql:ro
+    healthcheck:
+      test: [CMD-SHELL, 'MYSQL_PWD="$$MYSQL_ROOT_PASSWORD" mysqladmin ping -h 127.0.0.1 --protocol=tcp -uroot --silent']
+      interval: 2s
+      timeout: 3s
+      retries: 60
+  php:
+    image: mpkl-php:8.2.5-arm64
+    platform: linux/arm64
+    build:
+      context: .
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ${PHP825_SOURCE_ROOT:?Run scripts/php825-stage first}:/source:ro
+      - php825-receipts:/workspace/public/uploads/receipts
+    ports:
+      - '127.0.0.1:8082:8082'
+    environment:
+      PHP825_DB_PASSWORD: ${PHP825_DB_PASSWORD:?Set a private development password}
+      COMPOSER_CACHE_DIR: /tmp/composer-cache
+
+volumes:
+  php825-db:
+  php825-receipts:
